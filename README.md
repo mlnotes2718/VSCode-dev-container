@@ -122,6 +122,8 @@ docker exec -it -u devuser ubuntu_miniconda /bin/bash
 
 14. You can also change the above using the command `CMD+Shift+P` and search for `Terminal: Configure Terminal Settings` and under `Terminal > Integrated > Env:Linux` and add the above setting.
 
+15. You may need to reinstall Python, Jupyter extensions to the container environment.
+
 > Final Note: You can also change the image name, container name the default user of the container. However, please make all the same changes across all files.
 
 Reference:
