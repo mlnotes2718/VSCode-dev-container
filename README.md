@@ -79,9 +79,13 @@ chmod +x docker_run.sh
 ./.devcontainer/docker_run.sh
 ```
 
-8. To re-run a stopped container, you can hit the `play icon` :arrow_forward: either in the docker software are in the docker extension in VSCode.
+8. To re-run a stopped container, you can hit the `play icon` :arrow_forward: either in the docker software or in the docker extension in VSCode.
 
-9. In VSCode, clicked in the `connect to` in the `Welcome page`. Alternatively, you can also clock on the blue icon on the lower left corner. Click on `Attached to Running Container...`. A new VSCode window will be launched with connection to the container. 
+9. In VSCode, clicked in the `connect to` in the `Welcome page` (see image below). Alternatively, you can also clock on the blue icon on the lower left corner (see image below). Click on `Attached to Running Container...`. A new VSCode window will be launched with connection to the container. 
+
+![alt text](assets/connect_to.png)
+
+![alt text](assets/LR_corner_no_conn.png)
 
 10. If there is any error opening the folder `/home/devuser/workspace`, you can direct VSCode to the correct folder.
 
@@ -92,7 +96,7 @@ chmod +x docker_run.sh
 13. To avoid typing `bash` every time we start a new terminal, we can make some chanegs to VSCode settings. Under `.vscode/settings.json` please add the following json key:
 
 ```json
-"terminal.integrated.defaultProfile.linux": "bash"P
+"terminal.integrated.defaultProfile.linux": "bash"
 ```
 
 14. You can also change the above using the command `CMD+Shift+P` and search for `Terminal: Configure Terminal Settings` and under `Terminal > Integrated > Env:Linux` and add the above settings.
