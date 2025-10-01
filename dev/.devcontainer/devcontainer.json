@@ -1,4 +1,6 @@
 // You need to change the source `source=/Users/aiml/Documents/dev` to your local path `/Users/local_path/dev`
+// In this example, I mount /Users/aiml/Documents/dev to /home/devuser/workspace
+// Please change it to your local path
 {
   "name": "Ubuntu + Miniconda Dev",
   "build": {
