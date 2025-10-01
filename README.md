@@ -3,7 +3,7 @@
 ## Introduction to Container in VSCode
 The following guide is created to use docker container in VSCode. This is created because Anaconda has stopped building conda packages for Intel Macs. An alternative is to run docker container as the development platform.
 
-This feature also expose VSCode capabilities on development on remote system and containers. We do not use the official microsoft dev containers. The setup the Microsoft dev-container is easier and it include a persistent volume for storage. However, it is difficult to access the volume without docker software. So one of our objective is to create a docker environment that uses local Mac folder as the data source and attached to the docker environment. We also use Ubuntu instead of Debian so as to create similar environment as Windows WSL users. 
+This feature also expose VSCode capabilities on development on remote system and containers. We do not use the official microsoft dev containers. The setup of Microsoft dev-container is easier and it include a persistent volume for storage. However, it is difficult to access the volume without docker software. So one of our objective is to create a docker environment that uses local Mac folder as the data source and attached to the docker environment. We also use Ubuntu instead of Debian so as to create similar environment as Windows WSL users. 
 
 ## Docker Features
 - Docker OS: Ubuntu (version: 24.04)
@@ -11,9 +11,9 @@ This feature also expose VSCode capabilities on development on remote system and
 - A default user `devuser` was created during the build.
 - We do not use the official miniconda docker image as we are trying to create an image similar to WSL for windows user. 
 - The folder `dev` can be placed in any place user desired.
-- The docker filer and the shell scripts are created to connect the docker container with the folder dev.
+- The docker file and the shell scripts are created to connect the docker container with the folder dev.
 - Folder mapping (local): you can place the folder `dev` into any place such as `Downloads` or `Documents`.
-- Folder mapping (container): in the container, `dev` is mapped to `/home/devuser/workspace`.
+- Folder mapping (container): in the container, `dev` is mapped to `/home/devuser/workspace`
 
 
 ## Hardware
@@ -36,16 +36,16 @@ The main folder is `dev`, listed below is the folder structure
 └── # You can place any development project or git repository in this folder.   
 ```
 
-All the docker related files and the shell scripts are contained in the folder .devcontainer.
+All the docker related files and the shell scripts are contained in the folder `.devcontainer`
 
 
 ## Installation Steps
 
 1. Run your docker app.
 
-2. Open a terminal and navigate to this folder `vscode-dev-container`.
+2. Open a terminal and navigate to this folder `vscode-dev-container`
 
-3. Copy the folder `dev` to your local drive e.g. `cp dev /Users/your_path/`
+3. Copy the folder `dev` to your local drive e.g. `cp -R dev/ /Users/your_path/dev`
 
 ```bash
 cp -R source_folder destination_folder
@@ -73,7 +73,7 @@ chmod +x docker_run.sh
 ./docker_build.sh
 ```
 
-7. Run `docker_run.sh` to run the container when ever it is stopped. You need to rerun the script if you made changes to the file `docker_run.sh`. **DO NOT RUN** this script if you have run it previously. You can run this command in the dev folder.
+7. Run `docker_run.sh` to run the container whenever it is stopped. You need to rerun the script if you made changes to the file `docker_run.sh`. **DO NOT RUN** this script if you have run it previously. You can run this command in the `dev` folder.
 
 ```bash
 ./.devcontainer/docker_run.sh
@@ -102,7 +102,7 @@ To connect to a running container outside VSCode use the following command:
 docker exec -it -u devuser ubuntu_miniconda /bin/bash
 ```
 
-9. In VSCode, we need to attached the running container to VSCode. Clicked in the `connect to` in the `Welcome page` (see image below). Alternatively, you can also click on the blue icon on the lower left corner (see image below). Click on `Attached to Running Container...` and the the running container. A new VSCode window will be launched with connection to the container. 
+9. In VSCode, we need to attached the running container to VSCode. Clicked in the `Connect to...` in the `Welcome page` (see image below). Alternatively, you can also click on the blue icon on the lower left corner (see image below). Click on `Attached to Running Container...` and select the running container. A new VSCode window will be launched with connection to the container. 
 
 ![alt text](assets/connect_to.png)
 
@@ -120,9 +120,9 @@ docker exec -it -u devuser ubuntu_miniconda /bin/bash
 "terminal.integrated.defaultProfile.linux": "bash"
 ```
 
-14. You can also change the above using the command `CMD+Shift+P` and search for `Terminal: Configure Terminal Settings` and under `Terminal > Integrated > Env:Linux` and add the above settings.
+14. You can also change the above using the command `CMD+Shift+P` and search for `Terminal: Configure Terminal Settings` and under `Terminal > Integrated > Env:Linux` and add the above setting.
 
-> Final Note: You can also change the image name and container name also the default user of the container.
+> Final Note: You can also change the image name, container name the default user of the container. However, please make all the same changes across all files.
 
 Reference:
 
