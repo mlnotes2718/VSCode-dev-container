@@ -18,8 +18,8 @@ docker run -dit \
 # Type exit to exit the container
 echo "Change Password for devuser"
 echo "You need to change password for the devuser, please use following command:"
-echo "type: `passwd devuser`"
+echo "type: passwd devuser"
 echo "set a password for devuser"
-echo "type: `exit` when done"
+echo "type: exit when done"
 echo ""
 docker exec -it -u root ubuntu_miniconda /bin/bash

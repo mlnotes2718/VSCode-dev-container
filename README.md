@@ -12,6 +12,8 @@ This feature also expose VSCode capabilities on development on remote system and
 - We do not use the official miniconda docker image as we are trying to create an image similar to WSL for windows user. 
 - The folder `dev` can be placed in any place user desired.
 - The docker filer and the shell scripts are created to connect the docker container with the folder dev.
+- Folder mapping (local): you can place the folder `dev` into any place such as `Downloads` or `Documents`.
+- Folder mapping (container): in the container, `dev` is mapped to `/home/devuser/workspace`.
 
 
 ## Hardware
@@ -78,6 +80,22 @@ chmod +x docker_run.sh
 ```
 
 8. To re-run a stopped container, you can hit the `play icon` :arrow_forward: either in the docker software are in the docker extension in VSCode.
+
+9. In VSCode, clicked in the `connect to` in the `Welcome page`. Alternatively, you can also clock on the blue icon on the lower left corner. Click on `Attached to Running Container...`. A new VSCode window will be launched with connection to the container. 
+
+10. If there is any error opening the folder `/home/devuser/workspace`, you can direct VSCode to the correct folder.
+
+11. Volume mapping: If you place `dev` inside Documents. The local mapping will be local:`~/Documents/dev/`. The mapping in the container will be `/home/devuser/workspace`. Any files added in the dev folder will be shown in `~/Documents/dev/` in Finder and `/home/devuser/workspace` in the Ubuntu environment.
+
+12. There is a problem where if you open a new terminal in VSCode, it will default to `/bin/sh` instead of `bash`. We need `bash` to see our conda environment. Type `bash` every time you open a new terminal in VSCode.
+
+13. To avoid typing `bash` every time we start a new terminal, we can make some chanegs to VSCode settings. Under `.vscode/settings.json` please add the following json key:
+
+```json
+"terminal.integrated.defaultProfile.linux": "bash"P
+```
+
+14. You can also change the above using the command `CMD+Shift+P` and search for `Terminal: Configure Terminal Settings` and under `Terminal > Integrated > Env:Linux` and add the above settings.
 
 > Final Note: You can also change the image name and container name also the default user of the container.
 
