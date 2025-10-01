@@ -102,7 +102,7 @@ To connect to a running container outside VSCode use the following command:
 docker exec -it -u devuser ubuntu_miniconda /bin/bash
 ```
 
-9. In VSCode, we need to attached the running container to VSCode. C licked in the `connect to` in the `Welcome page` (see image below). Alternatively, you can also click on the blue icon on the lower left corner (see image below). Click on `Attached to Running Container...` and the the running container. A new VSCode window will be launched with connection to the container. 
+9. In VSCode, we need to attached the running container to VSCode. Clicked in the `connect to` in the `Welcome page` (see image below). Alternatively, you can also click on the blue icon on the lower left corner (see image below). Click on `Attached to Running Container...` and the the running container. A new VSCode window will be launched with connection to the container. 
 
 ![alt text](assets/connect_to.png)
 
