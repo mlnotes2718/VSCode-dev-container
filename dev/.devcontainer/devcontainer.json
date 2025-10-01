@@ -1,0 +1,38 @@
+// You need to change the source `source=/Users/aiml/Documents/dev` to your local path `/Users/local_path/dev`
+{
+  "name": "Ubuntu + Miniconda Dev",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "USERNAME": "devuser",
+      "USER_UID": "1001",
+      "USER_GID": "1001"
+        }
+    },
+  "remoteUser": "devuser",
+  "containerUser": "devuser",
+  "workspaceFolder": "/home/devuser/workspace",
+  "workspaceMount": "source=/Users/aiml/Documents/dev,target=/home/devuser/workspace,type=bind",
+  "containerEnv": {
+    "SHELL": "/bin/bash"
+    },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/opt/conda/bin/python",
+        "terminal.integrated.automationProfile.linux": {
+            "path": "/bin/bash",
+            // You can optionally add login arguments here
+            "args": ["-l"] 
+        },
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.profiles.linux": {
+            "bash": {
+                "path": "/bin/bash"
+            }        
+        }
+      }
+    }
+  },
+  "postCreateCommand": "conda init bash"
+}
