@@ -79,7 +79,22 @@ chmod +x docker_run.sh
 ./.devcontainer/docker_run.sh
 ```
 
-8. To re-run a stopped container, you can hit the `play icon` :arrow_forward: either in the docker software or in the docker extension in VSCode.
+8. To re-run a stopped container, you can hit the `play icon` :arrow_forward: either in the docker software or in the docker extension in VSCode. You can also use the following commands to run and stop a container:
+
+```bash
+# Start a stopped container
+docker start ubuntu_miniconda
+```
+
+```bash
+# Stop a running container
+docker stop ubuntu_miniconda
+```
+
+```bash
+# Restart a running container
+docker restart ubuntu_miniconda
+```
 
 9. In VSCode, clicked in the `connect to` in the `Welcome page` (see image below). Alternatively, you can also clock on the blue icon on the lower left corner (see image below). Click on `Attached to Running Container...`. A new VSCode window will be launched with connection to the container. 
 
