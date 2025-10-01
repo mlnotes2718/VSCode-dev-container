@@ -124,3 +124,6 @@ docker exec -it -u devuser ubuntu_miniconda /bin/bash
 
 > Final Note: You can also change the image name and container name also the default user of the container.
 
+Reference:
+
+https://code.visualstudio.com/docs/devcontainers/containers
